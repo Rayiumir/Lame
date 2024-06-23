@@ -1,0 +1,67 @@
+{
+    "name": "rayium/lame",
+    "description": "Authentication Mobile and Email for Laravel",
+    "keywords": [
+        "laravel",
+        "authentication",
+        "mobile",
+        "email",
+        "mobile-verification",
+        "email-verification",
+        "otp",
+        "2fa",
+        "laravel-package",
+        "laravel-authentication",
+        "laravel-mobile-authentication",
+        "laravel-email-authentication",
+        "laravel-mobile-verification",
+        "laravel-email-verification",
+        "laravel-otp",
+        "laravel-2fa",
+        "laravel-package-authentication",
+        "laravel-package-mobile-authentication",
+        "laravel-package-email-authentication",
+        "laravel-package-mobile-verification",
+        "laravel-package-email-verification",
+        "laravel-package-otp",
+        "laravel-package-2fa",
+        "laravel-package-authentication-mobile",
+        "laravel-package-authentication-email",
+        "laravel-package-authentication-mobile-verification",
+        "laravel-package-authentication-email-verification",
+        "laravel-package-authentication-otp",
+        "laravel-package-authentication-2fa"
+    ],
+    "license": "MIT",
+    "type": "package",
+    "autoload": {
+        "psr-4": {
+            "Rayium\\Lame\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Rayium\\Lame\\Tests": "tests"
+        }
+    },
+    "authors": [
+        {
+            "name": "Raymond Baghumian",
+            "email": "rayiumir@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "illuminate/support": "^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.3"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    }
+}
