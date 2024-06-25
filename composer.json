@@ -36,7 +36,7 @@
     "type": "package",
     "autoload": {
         "psr-4": {
-            "Rayium\\Lame\\": "src/"
+            "Rayium\\Lame\\": "src"
         }
     },
     "autoload-dev": {
