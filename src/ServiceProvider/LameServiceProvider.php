@@ -23,8 +23,13 @@ class LameServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
-        //
+        $this->_loadRoutes();
+    }
+
+    private function _loadRoutes(): void
+    {
+        $this->loadRoutesFrom(__DIR__.'/../Routes/web.php');
     }
 }
