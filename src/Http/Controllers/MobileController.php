@@ -8,6 +8,6 @@ class MobileController extends Controller
 {
     public function index()
     {
-        dd("Hello World");
+        return view('Lame::auth');
     }
 }

@@ -16,6 +16,6 @@ use Rayium\Lame\Http\Controllers\MobileController;
 
 $_namespace = '\Rayium\Lame\Http\Controllers';
 
-Route::namespace($_namespace)->middleware('guest')->group(function ($router) {
-        $router->get('/lame', [MobileController::class, 'index']);
+Route::namespace($_namespace)->middleware('guest')->group(static function ($router) {
+        $router->get('/auth', [MobileController::class, 'index']);
 });

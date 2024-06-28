@@ -26,10 +26,27 @@ class LameServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->_loadRoutes();
+        $this->_loadViews();
     }
 
+    /**
+     * For Load Routes
+     *
+     * @return void
+     */
     private function _loadRoutes(): void
     {
         $this->loadRoutesFrom(__DIR__.'/../Routes/web.php');
     }
+
+    /**
+     * For Load Views
+     *
+     * @return void
+     */
+    private function _loadViews(): void
+    {
+        $this->loadViewsFrom(__DIR__.'/../Resources/Views', 'Lame');
+    }
+
 }
