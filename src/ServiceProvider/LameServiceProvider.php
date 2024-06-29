@@ -36,7 +36,7 @@ class LameServiceProvider extends ServiceProvider
      */
     private function _loadRoutes(): void
     {
-        $this->loadRoutesFrom(__DIR__.'/../Routes/web.php');
+        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
     }
 
     /**
@@ -46,7 +46,7 @@ class LameServiceProvider extends ServiceProvider
      */
     private function _loadViews(): void
     {
-        $this->loadViewsFrom(__DIR__.'/../Resources/Views', 'Lame');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'Lame');
     }
 
 }

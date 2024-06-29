@@ -12,10 +12,10 @@
 */
 
 use Illuminate\Support\Facades\Route;
-use Rayium\Lame\Http\Controllers\MobileController;
+use Rayium\Lame\Http\Controllers\AuthController;
 
 $_namespace = '\Rayium\Lame\Http\Controllers';
 
 Route::namespace($_namespace)->middleware('guest')->group(static function ($router) {
-        $router->get('/auth', [MobileController::class, 'index']);
+        $router->get('/auth', [AuthController::class, 'index']);
 });
