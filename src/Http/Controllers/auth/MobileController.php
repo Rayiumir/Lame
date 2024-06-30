@@ -1,9 +1,8 @@
 <?php
 
-namespace Rayium\Lame\Http\Controllers;
+namespace Rayium\Lame\Http\Controllers\auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
 
 class MobileController extends Controller
 {
