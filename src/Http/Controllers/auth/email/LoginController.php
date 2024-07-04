@@ -1,6 +1,6 @@
 <?php
 
-namespace Rayium\Lame\Http\Controllers\auth;
+namespace Rayium\Lame\Http\Controllers\auth\email;
 
 use App\Http\Controllers\Controller;
 

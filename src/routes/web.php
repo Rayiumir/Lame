@@ -13,7 +13,14 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::middleware('guest')->group(static function ($router) {
-        $router->get('/login', [\Rayium\Lame\Http\Controllers\auth\LoginController::class, 'index']);
-        $router->get('/register', [\Rayium\Lame\Http\Controllers\auth\RegisterController::class, 'index']);
+Route::group(['middleware' => 'web'], static function ($router) {
+
+    // Login User
+
+    $router->get('/login', [\Rayium\Lame\Http\Controllers\auth\email\LoginController::class, 'index']);
+
+    // Register User
+
+    $router->get('/register', [\Rayium\Lame\Http\Controllers\auth\email\RegisterController::class, 'index'])->name('auth.register');
+    $router->post('/register', [\Rayium\Lame\Http\Controllers\auth\email\RegisterController::class, 'store'])->name('auth.register.store');
 });
