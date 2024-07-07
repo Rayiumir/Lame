@@ -14,3 +14,6 @@
     </div>
 </div>
 <!-- /#sidebar-wrapper -->
+<x-slot name="scripts">
+    تست
+</x-slot>

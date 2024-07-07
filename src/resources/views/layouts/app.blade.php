@@ -14,6 +14,7 @@
 
 </head>
 <body>
+
     <main class="container">
         @yield('content')
     </main>
@@ -56,6 +57,5 @@
         @endif
     </script>
     {{ $scripts ?? '' }}
-
 </body>
 </html>

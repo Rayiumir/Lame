@@ -13,12 +13,13 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::group(['middleware' => 'web'], static function ($router) {
+Route::group(['middleware' => 'web'], function ($router) {
     // Login User
-    $router->get('/login', [\Rayium\Lame\Http\Controllers\auth\email\LoginController::class, 'index']);
+    $router->get('/login', [\Rayium\Lame\Http\Controllers\auth\email\LoginController::class, 'index'])->name('auth.login');
+    $router->post('login', [\Rayium\Lame\Http\Controllers\auth\email\LoginController::class, 'store'])->name('auth.login.store');
     // Register User
-    $router->get('/register', [\Rayium\Lame\Http\Controllers\auth\email\RegisterController::class, 'index'])->name('auth.register');
-    $router->post('/register', [\Rayium\Lame\Http\Controllers\auth\email\RegisterController::class, 'store'])->name('auth.register.store');
+    $router->get('register', [\Rayium\Lame\Http\Controllers\auth\email\RegisterController::class, 'index'])->name('auth.register');
+    $router->post('register', [\Rayium\Lame\Http\Controllers\auth\email\RegisterController::class, 'store'])->name('auth.register.store');
 });
 
 Route::group(['prefix' => 'admin', 'middleware' => 'web'], static function ($router) {

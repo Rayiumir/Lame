@@ -14,16 +14,29 @@
                     <div class="tab-content" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="nav-One" role="tabpanel" aria-labelledby="nav-one" tabindex="0">
                             <div class="mt-3 mb-3">
-                                <div class="form-floating mb-3">
-                                    <input type="email" class="form-control rounded-4" id="floatingInput" placeholder="name@example.com">
-                                    <label for="floatingInput">آدرس ایمیل</label>
-                                </div>
-                                <div class="form-floating">
-                                    <input type="password" class="form-control rounded-4" id="floatingPassword" placeholder="Password">
-                                    <label for="floatingPassword">رمز عبور</label>
-                                </div>
+                                <form action="{{ route('auth.login.store') }}" method="POST">
+                                    @csrf
+                                    <div class="form-floating mb-3">
+                                        <input type="email" name="email" class="form-control rounded-4 @error('email') is-invalid @enderror" id="floatingInput" placeholder="name@example.com">
+                                        <label for="floatingInput">آدرس ایمیل</label>
+                                        @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                 <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="password" name="password" class="form-control rounded-4 @error('paswword') is-invalid @enderror" id="floatingPassword" placeholder="Password">
+                                        <label for="floatingPassword">رمز عبور</label>
+                                        @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                                 <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                    <button type="button" class="btn btn-primary rounded-5">ورود به سایت</button>
+                                </form>
                             </div>
-                            <button type="button" class="btn btn-primary rounded-5">ورود به سایت</button>
                         </div>
                         <div class="tab-pane fade" id="nav-Two" role="tabpanel" aria-labelledby="nav-two" tabindex="0">
                             <div class="mt-3 m-3">

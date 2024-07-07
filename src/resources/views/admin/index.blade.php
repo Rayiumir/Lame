@@ -1,1 +1,3 @@
-<?php
+@section('content')
+    تست
+@endsection

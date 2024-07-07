@@ -19,7 +19,7 @@
         @include('Admin::inc.navbar')
         <main class="container">
             <div class="mt-3">
-                {{$slot}}
+                @yield('content')
             </div>
         </main>
     </div>
