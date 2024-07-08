@@ -28,7 +28,7 @@
 <!-- /#wrapper -->
 <!-- Menu Toggle Script -->
 <script src="{{asset('js/jquery.min.js')}}"></script>
-<script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
+{{--<script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>--}}
 <script src="{{asset('js/toastr.min.js')}}"></script>
 <script>
     $("#menu-toggle").click(function(e) {

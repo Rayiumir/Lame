@@ -7,8 +7,9 @@
                 <div class="card-body">
                     <form action="{{ route('auth.register.store') }}" method="POST">
                         @csrf
+                        @method('POST')
                         <div class="mt-3 mb-3">
-                            <div class="form-floating mb-3">
+                            <div class="mb-3">
                                 <input type="text" name="name" class="form-control rounded-4 @error('name') is-invalid @enderror" id="floatingInput" placeholder="">
                                 <label for="floatingInput">نام</label>
                                 @error('name')
@@ -17,7 +18,7 @@
                                     </span>
                                 @enderror
                             </div>
-                            <div class="form-floating mb-3">
+                            <div class="mb-3">
                                 <input type="email" name="email" class="form-control rounded-4 @error('email') is-invalid @enderror" id="floatingInput" placeholder="">
                                 <label for="floatingInput">آدرس ایمیل</label>
                                 @error('email')
@@ -26,7 +27,7 @@
                                     </span>
                                 @enderror
                             </div>
-                            <div class="form-floating">
+                            <div class="">
                                 <input type="password" name="password" class="form-control rounded-4 @error('password') is-invalid @enderror" id="floatingPassword" placeholder="Password">
                                 <label for="floatingPassword">رمز عبور</label>
                                 @error('password')
