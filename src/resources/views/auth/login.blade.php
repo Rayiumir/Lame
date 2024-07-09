@@ -34,7 +34,7 @@
                                             </span>
                                         @enderror
                                     </div>
-                                    <button type="button" class="btn btn-primary rounded-5">ورود به سایت</button>
+                                    <button type="submit" class="btn btn-primary rounded-5">ورود به سایت</button>
                                 </form>
                             </div>
                         </div>
@@ -45,7 +45,7 @@
                                     <label for="floatingInput">شماره موبایل</label>
                                 </div>
                             </div>
-                            <button type="button" class="btn btn-primary rounded-5">دریافت کد تایید</button>
+                            <button type="submit" class="btn btn-primary rounded-5">دریافت کد تایید</button>
                         </div>
                     </div>
                 </div>
