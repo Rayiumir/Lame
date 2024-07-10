@@ -22,7 +22,7 @@ Route::group(['middleware' => 'web'], function ($router) {
     $router->post('/register', [\Rayium\Lame\Http\Controllers\auth\email\RegisterController::class, 'store'])->name('auth.register.store');
 });
 
-Route::group(['prefix' => 'admin'], function ($router) {
+Route::group(['prefix' => 'admin', 'middleware' => 'web'], function ($router) {
     // Admin
     $router->get('/', [\Rayium\Lame\Http\Controllers\admin\AdminController::class, 'index'])->name('admin.index')->middleware('auth');
 

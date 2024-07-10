@@ -10,8 +10,8 @@
                         @method('POST')
                         <div class="mt-3 mb-3">
                             <div class="mb-3">
-                                <input type="text" name="name" class="form-control rounded-4 @error('name') is-invalid @enderror" id="floatingInput" placeholder="">
-                                <label for="floatingInput">نام</label>
+                                <label for="Name" class="mb-2">نام</label>
+                                <input type="text" name="name" class="form-control rounded-5 @error('name') is-invalid @enderror" id="Name" placeholder="">
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -19,8 +19,8 @@
                                 @enderror
                             </div>
                             <div class="mb-3">
-                                <input type="email" name="email" class="form-control rounded-4 @error('email') is-invalid @enderror" id="floatingInput" placeholder="">
-                                <label for="floatingInput">آدرس ایمیل</label>
+                                <label for="Email" class="mb-2">آدرس ایمیل</label>
+                                <input type="email" name="email" class="form-control rounded-5 @error('email') is-invalid @enderror" id="Email" placeholder="">
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -28,8 +28,8 @@
                                 @enderror
                             </div>
                             <div class="">
-                                <input type="password" name="password" class="form-control rounded-4 @error('password') is-invalid @enderror" id="floatingPassword" placeholder="Password">
-                                <label for="floatingPassword">رمز عبور</label>
+                                <label for="Password" class="mb-2">رمز عبور</label>
+                                <input type="password" name="password" class="form-control rounded-5 @error('password') is-invalid @enderror" id="Password" placeholder="Password">
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -38,6 +38,9 @@
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary rounded-5">ثبت نام</button>
+                        <a class="btn btn-link text-decoration-none text-secondary" href="{{ route('login') }}">
+                            قبلا ثبت نام کردید؟ وارد شوید.
+                        </a>
                     </form>
                 </div>
             </div>
