@@ -5,6 +5,9 @@
         <div class="col-6 offset-md-3">
             <div class="card rounded-5 shadow-sm mt-5">
                 <div class="card-body">
+                    <figure class="text-center mt-3">
+                        <img src="{{asset('/icon/user-plus.png')}}" width="100" height="100" alt="" srcset="">
+                    </figure>
                     <form action="{{ route('auth.register.store') }}" method="POST">
                         @csrf
                         @method('POST')
@@ -29,7 +32,7 @@
                             </div>
                             <div class="">
                                 <label for="Password" class="mb-2">رمز عبور</label>
-                                <input type="password" name="password" class="form-control rounded-5 @error('password') is-invalid @enderror" id="Password" placeholder="Password">
+                                <input type="password" name="password" class="form-control rounded-5 @error('password') is-invalid @enderror" id="Password" placeholder="">
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

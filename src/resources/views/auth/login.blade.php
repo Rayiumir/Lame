@@ -13,6 +13,9 @@
                     </nav>
                     <div class="tab-content" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="nav-One" role="tabpanel" aria-labelledby="nav-one" tabindex="0">
+                            <figure class="text-center mt-3">
+                                <img src="{{asset('/icon/user.png')}}" width="100" height="100" alt="" srcset="">
+                            </figure>
                             <div class="mt-3 mb-3">
                                 <form action="{{ route('auth.login.store') }}" method="POST">
                                     @csrf
@@ -45,6 +48,9 @@
                             </div>
                         </div>
                         <div class="tab-pane fade" id="nav-Two" role="tabpanel" aria-labelledby="nav-two" tabindex="0">
+                            <figure class="text-center mt-3">
+                                <img src="{{asset('/icon/phone-sms.png')}}" width="100" height="100" alt="" srcset="">
+                            </figure>
                             <div class="mt-3 m-3">
                                 <div class="mb-3">
                                     <label for="Mobile" class="mb-2">شماره موبایل</label>
