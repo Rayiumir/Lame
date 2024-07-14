@@ -39,10 +39,10 @@
                                     </div>
                                     <button type="submit" class="btn btn-primary rounded-5">ورود به سایت</button>
                                     <a class="btn btn-link text-decoration-none text-secondary" href="{{ route('auth.register') }}">
-                                        ثبت نام نکردید؟ وارد شوید.
+                                        حساب کاربری ندارید؟ ساخت حساب کاربری
                                     </a>
-                                    <a class="btn btn-link text-decoration-none text-danger" href="#">
-                                        فراموشی رمز عبور؟
+                                    <a class="btn btn-link text-decoration-none text-danger" href="{{ route('auth.password.email') }}">
+                                        بازنشانی رمز عبور؟
                                     </a>
                                 </form>
                             </div>
