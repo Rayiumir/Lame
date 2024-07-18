@@ -1,6 +1,7 @@
 {
     "name": "rayium/lame",
     "description": "Authentication Mobile and Email for Laravel",
+    "version": "0.1.0",
     "keywords": [
         "laravel",
         "authentication",
