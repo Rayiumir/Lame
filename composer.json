@@ -2,7 +2,7 @@
     "name": "rayium/lame",
     "description": "Authentication Mobile and Email for Laravel",
     "homepage": "https://github.com/Rayiumir/Lame",
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "keywords": [
         "laravel",
         "authentication",
