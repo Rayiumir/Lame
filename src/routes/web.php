@@ -92,6 +92,15 @@ Route::group(["middleware" => "web"], function ($router) {
         ])
         ->name("auth.password.update")
         ->middleware("guest");
+
+    // Login Mobile
+
+    $router
+        ->any("/login/mobile", [
+            \Rayium\Lame\Http\Controllers\auth\mobile\MobileController::class,
+            "mobile"
+        ])
+        ->name("auth.mobile");
 });
 
 Route::group(

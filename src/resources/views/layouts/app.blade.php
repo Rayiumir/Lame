@@ -23,6 +23,7 @@
     <script src="{{asset('js/jquery.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('js/toastr.min.js')}}"></script>
+    <script src="{{asset('js/mobile.js')}}"></script>
     <script>
         @if(Session::has('message'))
             toastr.options =
