@@ -3,10 +3,8 @@
 namespace Rayium\Lame\Http\Controllers\auth\mobile;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use Rayium\Lame\Http\Notifications\OTPSMS;
+use Rayium\Lame\Rules\ValidMobile;
 
 class MobileController extends Controller
 {
@@ -16,5 +14,9 @@ class MobileController extends Controller
         {
             return view('Lame::auth.mobile');
         }
+
+        $request->validate([
+            'mobile' => ['required', new ValidMobile()]
+        ]);
     }
 }

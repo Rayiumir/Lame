@@ -39,7 +39,7 @@ class LameServiceProvider extends ServiceProvider
      */
     private function _loadRoutes(): void
     {
-        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+        $this->loadRoutesFrom(__DIR__.'/../Routes/auth.php');
     }
 
     /**
@@ -49,34 +49,34 @@ class LameServiceProvider extends ServiceProvider
      */
     private function _loadViews(): void
     {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'Lame');
+        $this->loadViewsFrom(__DIR__.'/../Resources/views', 'Lame');
 
         $this->publishes([
-            __DIR__.'/../resources/views' => resource_path('views/')
+            __DIR__.'/../Resources/views' => resource_path('views/')
         ],'lame-views');
     }
 
     private function _loadScripts(): void
     {
         $this->publishes([
-            __DIR__.'/../resources/css' => public_path('/css')
+            __DIR__.'/../Resources/css' => public_path('/css')
         ], 'lame-styles');
 
         $this->publishes([
-            __DIR__.'/../resources/fonts' => public_path('/fonts')
+            __DIR__.'/../Resources/fonts' => public_path('/fonts')
         ], 'lame-fonts');
 
         $this->publishes([
-            __DIR__.'/../resources/js' => public_path('/js')
+            __DIR__.'/../Resources/js' => public_path('/js')
         ], 'lame-scripts');
     }
 
     private function _loadMigrations(): void
     {
-        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/../Database/migrations');
 
         $this->publishes([
-            __DIR__.'/../database/migrations' => database_path('migrations')
+            __DIR__.'/../Database/migrations' => database_path('migrations')
         ], 'lame-migrations');
 
     }
@@ -86,6 +86,5 @@ class LameServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../Http/Controllers' => app_path('Http/Controllers'),
         ], 'lame-controllers');
-
     }
 }
