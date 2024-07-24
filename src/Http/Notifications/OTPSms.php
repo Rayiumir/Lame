@@ -5,12 +5,13 @@ namespace Rayium\Lame\Http\Notifications;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
-use Rayium\Lame\Http\Channels\SMSChannel;
+use Rayium\Lame\Http\Channels\SmsChannel;
 
-class OTPSMS extends Notification
+class OTPSms extends Notification
 {
     use Queueable;
 
+    public $code;
     /**
      * Create a new notification instance.
      */
@@ -24,15 +25,15 @@ class OTPSMS extends Notification
      *
      * @return array<int, string>
      */
-    public function via(object $notifiable): array
+    public function via($notifiable): array
     {
-        return [SMSChannel::class];
+        return [SmsChannel::class];
     }
 
     /**
      * Get the mail representation of the notification.
      */
-    public function toMail(object $notifiable): MailMessage
+    public function toMail($notifiable): MailMessage
     {
         return (new MailMessage)
                     ->line('The introduction to the notification.')
@@ -45,14 +46,14 @@ class OTPSMS extends Notification
      *
      * @return array<string, mixed>
      */
-    public function toArray(object $notifiable): array
+    public function toArray($notifiable): array
     {
         return [
             //
         ];
     }
 
-    public function toSMS($notifiable)
+    public function toSms($notifiable)
     {
         return $this->code;
     }

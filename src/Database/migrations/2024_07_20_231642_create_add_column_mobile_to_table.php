@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('mobile')->nullable();
+            $table->string('otp')->nullable();
             $table->string('login_token')->nullable();
         });
     }

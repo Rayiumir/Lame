@@ -101,6 +101,12 @@ Route::group(["middleware" => "web"], function ($router) {
             "mobile"
         ])
         ->name("auth.mobile");
+
+    $router
+        ->post("/check-otp", [
+            \Rayium\Lame\Http\Controllers\auth\mobile\MobileController::class,
+            "checkOTP"
+        ]);
 });
 
 Route::group(

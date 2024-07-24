@@ -20,6 +20,18 @@
                             </div>
                         </form>
                     </div>
+
+                    <form id="checkOTPForm">
+                        <input type="text" id="checkOTPInput" class="form-control rounded-5" placeholder="رمز یکبار مصرف">
+
+                        <div id="checkOTPInputError" class="input-error-validation">
+                            <strong id="checkOTPInputErrorText"></strong>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-success rounded-5 mt-5">ورود به سایت</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -28,6 +40,9 @@
 
 @section('scripts')
     <script>
+        let loginToken;
+        $('#checkOTPForm').hide();
+
         $('#mobileForm').submit(function(event){
             event.preventDefault();
             $.post("{{ url('/login/mobile') }}",
@@ -37,11 +52,42 @@
 
                 } , function(response , status){
                     console.log(response , status);
+                    loginToken = response.login_token;
+
+                    $('#mobileForm').fadeOut();
+                    $('#checkOTPForm').fadeIn();
 
                 }).fail(function(response){
-                $('#mobileInput').addClass('mb-1');
-                $('#mobileInputError').fadeIn();
-                $('#mobileInputErrorText').html(response.responseJSON.errors.mobile[0]);
+                console.log(response.responseJSON);
+                if (response.responseJSON && response.responseJSON.errors && response.responseJSON.errors.mobile) {
+                    $('#mobileInput').addClass('mb-1');
+                    $('#mobileInputError').fadeIn();
+                    $('#mobileInputErrorText').html(response.responseJSON.errors.mobile[0]);
+                } else {
+                    $('#mobileInputErrorText').html('An error occurred. Please try again.');
+                    $('#mobileInputError').fadeIn();
+                }
+            });
+        });
+
+        $('#checkOTPForm').submit(function(event){
+            event.preventDefault();
+
+            $.post("{{ url('/check-otp') }}",
+                {
+                    '_token' : "{{ csrf_token() }}",
+                    'otp' : $('#checkOTPInput').val(),
+                    'login_token' : loginToken
+
+                } , function(response , status){
+                    console.log(response , status);
+                    $(location).attr('href' , "{{ route('admin.index') }}");
+
+                }).fail(function(response){
+                console.log(response.responseJSON);
+                $('#checkOTPInput').addClass('mb-1');
+                $('#checkOTPInputError').fadeIn();
+                $('#checkOTPInputErrorText').html(response.responseJSON.errors.otp[0]);
             })
         });
     </script>
